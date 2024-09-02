@@ -1,5 +1,6 @@
 package com.javarush.tracker.repository;
 
+import com.javarush.tracker.model.dto.PageDTO;
 import com.javarush.tracker.model.entity.Tag;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
@@ -19,6 +20,10 @@ public class TagRepository implements Repository<Tag, Long> {
         return List.of();
     }
 
+    @Override
+    public PageDTO<Tag> findAll(int page, int size) {
+        return null;
+    }
 
     public List<Tag> findAll(Session session) {
         return session.createQuery("from Tag")
@@ -26,8 +31,8 @@ public class TagRepository implements Repository<Tag, Long> {
     }
 
     @Override
-    public void save(Tag tag) {
-
+    public void save(Tag tag, Session session) {
+        session.persist(tag);
     }
 
     @Override

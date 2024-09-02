@@ -10,7 +10,6 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 @WebListener
@@ -30,7 +29,7 @@ public class AppContextListener implements ServletContextListener {
         //tags
         TagRepository tagRepository = new TagRepository();
         TagMapper tagMapper = TagMapper.INSTANSE;
-        TagService tagService = new TagService(sessionFactory, tagRepository, tagMapper);
+        TagService tagService = new TagService(sessionFactory, tagMapper, tagRepository);
 
 
         ctx.setAttribute("tagService", tagService);

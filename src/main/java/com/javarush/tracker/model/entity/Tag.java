@@ -15,7 +15,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "tags")
-public class Tag {
+public class Tag implements com.javarush.tracker.model.entity.Entity {
 
     @Id
     @GeneratedValue
