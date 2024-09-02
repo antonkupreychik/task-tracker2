@@ -6,4 +6,8 @@
 
     <include file="version_1_0/TRC-1.xml" relativeToChangelogFile="true"/>
     <include file="version_1_0/TRC-2.xml" relativeToChangelogFile="true"/>
+
+    <include file="version_2_0/TRC-3.xml" relativeToChangelogFile="true"/>
+
+
 </databaseChangeLog>

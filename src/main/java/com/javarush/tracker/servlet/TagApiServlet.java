@@ -28,7 +28,7 @@ public class TagApiServlet extends HttpServlet implements Servlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-        sendObjectAsJson(objectMapper, response, tagService.getAll());
+        sendObjectAsJson(objectMapper, response, tagService.findAll());
     }
 
     @Override

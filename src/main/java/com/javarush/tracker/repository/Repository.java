@@ -3,23 +3,24 @@ package com.javarush.tracker.repository;
 import com.javarush.tracker.model.dto.PageDTO;
 import org.hibernate.Session;
 
-import java.awt.print.Pageable;
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
-public interface Repository<T, ID extends Serializable> {
-    Optional<T> findById(ID id);
+public interface Repository<E, ID extends Serializable> {
+    Optional<E> findById(ID id);
 
-    List<T> findAll();
+    List<E> findAll(Session session);
 
-    PageDTO<T> findAll(int page, int size);
+    PageDTO<E> findAll(int page, int size);
 
-    void save(T t, Session session);
+    void save(E e, Session session);
 
-    void delete(T t);
+    void delete(E e);
 
     void deleteById(ID id);
 
-    T update(T t);
+    E update(E e);
 }

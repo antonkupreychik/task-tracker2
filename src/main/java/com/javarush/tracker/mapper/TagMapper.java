@@ -20,9 +20,6 @@ public interface TagMapper extends Mapper<Tag, TagDto, TagCommand> {
     @Override
     TagDto mapToDTO(Tag entity);
 
-    @Override
-    TagCommand mapToCommand(Tag entity);
-
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Tag partialUpdate(TagDto tagDto, @MappingTarget Tag tag);
 }

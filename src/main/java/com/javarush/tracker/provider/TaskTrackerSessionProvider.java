@@ -1,6 +1,7 @@
 package com.javarush.tracker.provider;
 
 import com.javarush.tracker.model.entity.Tag;
+import com.javarush.tracker.model.entity.Task;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -23,6 +24,7 @@ public class TaskTrackerSessionProvider implements SessionProvider {
         return new Configuration()
                 .addProperties(hibernateProperties)
                 .addAnnotatedClass(Tag.class)
+                .addAnnotatedClass(Task.class)
                 .buildSessionFactory();
     }
 }

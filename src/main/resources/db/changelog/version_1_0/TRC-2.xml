@@ -9,11 +9,4 @@
     <changeSet id="TRC-2-0" author="Anton Kupreychik">
         <alterSequence incrementBy="50" sequenceName="tags_seq"/>
     </changeSet>
-
-    <changeSet id="1725299495324-1" author="Anton Kupreychik">
-        <sql>
-            select * from tags;
-        </sql>
-    </changeSet>
-
 </databaseChangeLog>
