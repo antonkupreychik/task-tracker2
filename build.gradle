@@ -35,6 +35,8 @@ dependencies {
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testImplementation 'org.testcontainers:postgresql:1.20.1'
+
 
     liquibaseRuntime 'org.liquibase:liquibase-core:4.29.0'
     liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:2.1.1'

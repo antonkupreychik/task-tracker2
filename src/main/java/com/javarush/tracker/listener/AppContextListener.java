@@ -26,7 +26,7 @@ public class AppContextListener implements ServletContextListener {
         ObjectMapper objectMapper = new ObjectMapper();
 
         //hibernate
-        SessionProvider sessionProvider = new TaskTrackerSessionProvider();
+        SessionProvider sessionProvider = new TaskTrackerSessionProvider("", "", "");
         SessionFactory sessionFactory = sessionProvider.getSessionFactory();
 
         //tags

@@ -3,6 +3,7 @@ package com.javarush.tracker.repository;
 import com.javarush.tracker.model.dto.PageDTO;
 import com.javarush.tracker.model.entity.Tag;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,5 +43,13 @@ public class TagRepository implements Repository<Tag, Long> {
     @Override
     public Tag update(Tag tag) {
         return null;
+    }
+
+    public void dropAll(Session session) {
+        Transaction transaction = session.beginTransaction();
+
+        session.createNativeQuery("delete from tags").executeUpdate();
+
+        transaction.commit();
     }
 }
