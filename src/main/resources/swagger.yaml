@@ -1,0 +1,42 @@
+openapi: 3.0.1
+info:
+  title: Sfera.Teams Public API
+  description: 'СУБО Сфера: Управление командами'
+  version: /api/v1
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+
+tags:
+  - name: Tasks
+  - name: Tags
+
+paths:
+  /api/tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Возвращает список задач
+      operationId: getTasks
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/TaskDTO'
+
+components:
+  schemas:
+    TaskDTO:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+
